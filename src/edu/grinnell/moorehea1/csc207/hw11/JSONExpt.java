@@ -10,14 +10,14 @@ public class JSONExpt {
 	String example1 = "{\"Hello\":\"Hello, World\"}";
 	String example2 = "{\"Hello\":{\"Hi there\":\"Hello, World\"}}";
 	
-	JSONThing.Method(example0, 0);
-	pen.println(JSONThing.Method(example0, 0));
+	JSONThing.method(example0, 0);
+	pen.println(JSONThing.method(example0, 0));
 	
-	JSONThing.Method(example1, 0);
-	pen.println(JSONThing.Method(example1, 0));
+	JSONThing.method(example1, 0);
+	pen.println(JSONThing.method(example1, 0));
 	
-	JSONThing.Method(example2, 0);
-	pen.println(JSONThing.Method(example2, 0));
+	JSONThing.method(example2, 0);
+	pen.println(JSONThing.method(example2, 0));
 	
     }
     

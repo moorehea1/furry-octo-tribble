@@ -4,24 +4,20 @@ import java.util.Hashtable;
 
 public class JSONThing<N, V> {
 
-    /**
-     * Fields
-     */
-
-    Object[] pairs;
 
     /**
      * Constructors
      */
 
-    //create a new hashtable named JSON 
-    static Hashtable<String, String> JSON = new Hashtable<String, String>();
+    static //create a new hashtable named JSON 
+
+    Hashtable<String, String> hash = new Hashtable<String, String>();
 
     /**
      * Methods
      */
 
-    public static String Method(String input, int start) {
+    public static String method(String input, int start) {
 	String name = null;
 	String value = null;
 	for (int i = start; i < input.length(); i++) {
@@ -31,7 +27,7 @@ public class JSONThing<N, V> {
 		    // if there is no colon after an opening bracket, it must be empty
 		} // if (input.indexOf(':') == -1)
 		else if (input.indexOf('{', i+1) > input.indexOf(':', i)) {
-		    // stub
+		    method(input, i); // -- currently throws thousands of errors at this point. My thought is because of the <String, String> designation
 		    // if you run into a new open bracket before a colon, recurse.
 		} // else if ()
 		else {
@@ -47,19 +43,7 @@ public class JSONThing<N, V> {
 		// Set the value to the string from the colon to the end brace
 	    } // else if (input.charAt(i) == ':')
 	} // for(int i = 0; i < input.length(); i++)
-	return JSON.put(name,value);
+	return hash.put(name,value);
     } // Method (String input)
 
-    /**
-     * Inner classes
-     */
-
-    class NVPair {
-	N name;
-	V value;
-	NVPair(N name, V value) {
-	    this.name = name;
-	    this.value = value;
-	} // NVPair(N,V)
-    } // class NVPair
 }
